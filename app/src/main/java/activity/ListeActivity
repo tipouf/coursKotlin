@@ -1,0 +1,41 @@
+package activity
+
+import adapter.MemoAdapter
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import bo.Memo
+import com.example.tp2ihm.R
+import kotlin.random.Random
+
+class ListeItem : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_recyclerview)
+
+        // liste :
+        val recyclerView: RecyclerView = findViewById(R.id.listeItem)
+
+        // à ajouter pour de meilleures performances :
+        recyclerView.setHasFixedSize(true)
+
+        // layout manager, décrivant comment les items sont disposés :
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // contenu d'exemple :
+        val listeMemo: MutableList<Memo> = ArrayList()
+        listeMemo.add(Memo("rappel", "rendez vous urgent", 5))
+        listeMemo.add(Memo("Dentiste", "demain soir 17h30", 1))
+
+        for (a in 1..100){
+            listeMemo.add(Memo("Rappel Urgent $a", "rappel rappel rappel rappel $a", Random.nextInt(4)+1))
+        }
+
+        // adapter :
+        val memoAdapter = MemoAdapter(listeMemo)
+        recyclerView.adapter = memoAdapter
+
+    }
+
+}

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cours KOTLIN</string>
+
+    <!-- translate TP2 -->
+    <string name="tp2_title">the survey</string>
+    <string name="how_are_you">How are you?</string>
+    <string name="level"> What is your bilboquet level?</string>
+    <string name="your_mail">Your email ?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

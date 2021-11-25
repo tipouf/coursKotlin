@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:background="@android:color/darker_gray"
+        android:layout_width="0dp"
+        android:padding="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_height="wrap_content"
+        android:text="@string/tp2_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/how_are_you"
+        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/toggleButton"
+        app:layout_constraintTop_toTopOf="@+id/toggleButton" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/toggleButton"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/question"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        />
+
+    <TextView
+        android:id="@+id/bilbo"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:padding="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/level"
+        app:layout_constraintTop_toBottomOf="@id/question"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <SeekBar
+        android:id="@+id/test"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:height="50sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:padding="20dp"
+        android:text="@string/level"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bilbo" />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:padding="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/your_mail"
+        app:layout_constraintTop_toBottomOf="@id/test"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <EditText
+        android:id="@+id/input_mail"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:padding="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/your_mail"
+        app:layout_constraintTop_toBottomOf="@id/mail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/input_mail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/button3"
+        app:layout_constraintRight_toLeftOf="@id/button2"
+        android:layout_margin="4dp"
+        android:text="OK1"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/input_mail"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/button4"
+        app:layout_constraintLeft_toRightOf="@id/button1"
+        android:layout_margin="4dp"
+        android:text="OK2"/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button4"
+        android:layout_margin="4dp"
+        android:text="OK3"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/button3"
+        android:layout_margin="4dp"
+        android:text="OK4"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
