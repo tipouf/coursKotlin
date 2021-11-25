@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:orientation="vertical"
     android:fillViewport="true">
 
     <LinearLayout
@@ -13,14 +14,23 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
-    tools:context="activity.IntentActivity">
+        android:paddingHorizontal="100dp"
+        tools:context="activity.IntentActivity">
+
+    <TextClock
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:fontFamily="@font/lemon"
+        android:gravity="center_horizontal"
+        tools:text="CLOCK"/>
 
     <Button
         android:id="@+id/button_disposition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="dispo graphique"
+        android:fontFamily="@font/lemon"
         android:width="200dp"
         android:height="70dp"
 />
@@ -30,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lancer les dés"
+        android:fontFamily="@font/lemon"
         android:width="200dp"
         android:height="70dp"
 />
@@ -39,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send Message"
+        android:fontFamily="@font/lemon"
         android:width="150dp"
         android:height="70dp"
  />
@@ -48,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send Message2"
+        android:fontFamily="@font/lemon"
         android:width="150dp"
         android:height="70dp"
 />
@@ -57,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Permission"
+        android:fontFamily="@font/lemon"
         android:width="200dp"
         android:height="70dp"
 />
@@ -66,6 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RecyclerView"
+        android:fontFamily="@font/lemon"
         android:width="200dp"
         android:height="70dp"
 />
@@ -75,6 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fragment"
+        android:fontFamily="@font/lemon"
         android:width="200dp"
         android:height="70dp"
 />
@@ -83,10 +99,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Preferences"
+        android:fontFamily="@font/lemon"
         android:width="200dp"
         android:height="70dp"
 />
-
     </LinearLayout>
-
 </ScrollView>
