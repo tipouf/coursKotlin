@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tp2ihm.MainActivity
 import com.example.tp2ihm.R
 import kotlin.math.log
 
@@ -24,6 +25,7 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var boutonRecycler: Button
     private lateinit var boutonFragment: Button
     private lateinit var boutonPreference: Button
+    private lateinit var boutonDispositon: Button
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -51,6 +53,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         boutonPreference = findViewById<Button>(R.id.buttonPreferences)
         boutonPreference.setOnClickListener(this )
+
+        boutonDispositon = findViewById<Button>(R.id.button_disposition)
+        boutonDispositon.setOnClickListener(this )
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -104,6 +109,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         } else if (view == boutonPreference) {
             val intent = Intent(this, PreferencesActivity::class.java)
+            startActivity(intent)
+        }else if (view == boutonDispositon) {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
