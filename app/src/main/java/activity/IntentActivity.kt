@@ -23,6 +23,7 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var boutonPermission: Button
     private lateinit var boutonRecycler: Button
     private lateinit var boutonFragment: Button
+    private lateinit var boutonPreference: Button
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -47,6 +48,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         boutonFragment = findViewById<Button>(R.id.buttonFragment)
         boutonFragment.setOnClickListener(this )
+
+        boutonPreference = findViewById<Button>(R.id.buttonPreferences)
+        boutonPreference.setOnClickListener(this )
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -97,6 +101,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         } else if (view == boutonFragment) {
             val intent = Intent(this, FragmentActivity::class.java)
+            startActivity(intent)
+        } else if (view == boutonPreference) {
+            val intent = Intent(this, PreferencesActivity::class.java)
             startActivity(intent)
         }
     }

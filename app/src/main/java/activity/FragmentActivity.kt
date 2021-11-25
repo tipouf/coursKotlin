@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import bo.Memo
@@ -19,6 +21,10 @@ class FragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
+
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val valeur = preferences.getString("memoSave", "NO SAVE YET")
+        Toast.makeText(this,valeur.toString(), Toast.LENGTH_LONG).show()
 
         // liste :
         recyclerView = findViewById(R.id.listeItem)

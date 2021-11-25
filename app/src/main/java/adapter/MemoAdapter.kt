@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView
 import bo.Memo
 import com.example.tp2ihm.R
@@ -48,6 +49,11 @@ class MemoAdapter (private var listeMemo: MutableList<Memo>, private val fragmen
         init {
             itemView.setOnClickListener{
                 val memo = listeMemo[adapterPosition]
+
+                val preferences = PreferenceManager.getDefaultSharedPreferences(itemView.context)
+                val editor = preferences.edit()
+                editor.putString("memoSave", memo.title)
+                editor.apply()
 
                 //choix affichage tablette /smartphone
                 if (fragmentActivity.findViewById<FrameLayout>(R.id.conteneur_fragment) != null)

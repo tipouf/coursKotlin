@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TP2IHM</string>
+    <string name="app_name">Cours KOTLIN langue FR</string>
 
     <!-- translate TP2 -->
     <string name="tp2_title">Le questionnaire</string>

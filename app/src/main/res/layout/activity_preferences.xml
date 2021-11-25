@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="activity.PreferencesActivity">
+
+    <TextView
+        android:id="@+id/title_share"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="SHARE PREFERENCE"
+        android:textSize="20sp"
+        android:height="50dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonWriteShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save sharePreference"
+        android:onClick="saveSharePreference"
+        android:width="200dp"
+        android:height="70dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/title_share"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/buttonReadShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="read sharePreference"
+        android:onClick="readSharePreference"
+        android:width="200dp"
+        android:height="70dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonWriteShare"/>
+
+
+    <TextView
+        android:id="@+id/title_TXT"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="SAVE in a file"
+        android:textSize="20sp"
+        android:height="50dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/buttonSaveTXT"/>
+
+    <Button
+        android:id="@+id/buttonSaveTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save TXT"
+        android:onClick="saveTXT"
+        android:width="200dp"
+        android:height="70dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonSaveTXT"/>
+
+    <Button
+        android:id="@+id/buttonReadTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="read TXT"
+        android:onClick="readTXT"
+        android:width="200dp"
+        android:height="70dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSaveTXT"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
