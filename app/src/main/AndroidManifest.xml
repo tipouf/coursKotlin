@@ -14,12 +14,15 @@
         android:theme="@style/Theme.TP2IHM">
         <activity
             android:name=".activity.RoomMemoActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activity.PreferencesActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activity.DetailMemoActivityMain"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DetailMemoActivityMainOld"
             android:exported="true" />
         <activity
             android:name=".activity.FragmentActivity"

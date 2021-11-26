@@ -13,7 +13,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2ihm.bo.Memo
 import com.example.tp2ihm.R
+import com.example.tp2ihm.activity.DetailMemoActivityMainOld
 import com.example.tp2ihm.fragment.DetailMemoFragment
+import com.example.tp2ihm.fragment.DetailMemoFragmentOld
 
 class MemoAdapter2 (private var listeMemo: MutableList<Memo>, private val recyclerViewActivity: RecyclerViewActivity) :
     RecyclerView.Adapter<MemoAdapter2.MemoViewHolder>()
@@ -52,11 +54,11 @@ class MemoAdapter2 (private var listeMemo: MutableList<Memo>, private val recycl
                 if (recyclerViewActivity.findViewById<FrameLayout>(R.id.conteneur_fragment) != null)
                 {
                     //tablette:
-                    val fragment = DetailMemoFragment()
+                    val fragment = DetailMemoFragmentOld()
 
                     //argument :
                     val bundle = Bundle()
-                    bundle.putParcelable(DetailMemoFragment.MEMO, memo)
+                    bundle.putParcelable(DetailMemoFragmentOld.MEMO, memo)
                     fragment.arguments = bundle
 
                     //ajout
@@ -67,8 +69,8 @@ class MemoAdapter2 (private var listeMemo: MutableList<Memo>, private val recycl
                     //smartphone:
                     //Envoi vers la page detail
                     Log.d("test", "test $memo")
-                    val intent = Intent(itemView.context,DetailMemoActivityMain::class.java)
-                    intent.putExtra(DetailMemoActivityMain.MEMO, memo)
+                    val intent = Intent(itemView.context,DetailMemoActivityMainOld::class.java)
+                    intent.putExtra(DetailMemoActivityMainOld.MEMO, memo)
                     itemView.context.startActivity(intent)
                 }
 

@@ -14,7 +14,9 @@ import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2ihm.bo.Memo
 import com.example.tp2ihm.R
+import com.example.tp2ihm.activity.DetailMemoActivityMainOld
 import com.example.tp2ihm.fragment.DetailMemoFragment
+import com.example.tp2ihm.fragment.DetailMemoFragmentOld
 
 class MemoAdapter (private var listeMemo: MutableList<Memo>, private val fragmentActivity: FragmentActivity) :
     RecyclerView.Adapter<MemoAdapter.MemoViewHolder>()
@@ -58,11 +60,11 @@ class MemoAdapter (private var listeMemo: MutableList<Memo>, private val fragmen
                 if (fragmentActivity.findViewById<FrameLayout>(R.id.conteneur_fragment) != null)
                 {
                     //tablette:
-                    val fragment = DetailMemoFragment()
+                    val fragment = DetailMemoFragmentOld()
 
                     //argument :
                     val bundle = Bundle()
-                    bundle.putParcelable(DetailMemoFragment.MEMO, memo)
+                    bundle.putParcelable(DetailMemoFragmentOld.MEMO, memo)
                     fragment.arguments = bundle
 
                     //ajout
@@ -73,8 +75,8 @@ class MemoAdapter (private var listeMemo: MutableList<Memo>, private val fragmen
                     //smartphone:
                     //Envoi vers la page detail
                     Log.d("test", "test $memo")
-                    val intent = Intent(itemView.context,DetailMemoActivityMain::class.java)
-                    intent.putExtra(DetailMemoActivityMain.MEMO, memo)
+                    val intent = Intent(itemView.context,DetailMemoActivityMainOld::class.java)
+                    intent.putExtra(DetailMemoActivityMainOld.MEMO, memo)
                     itemView.context.startActivity(intent)
                 }
 
