@@ -1,7 +1,8 @@
-package com.example.tp2ihm
+package com.example.tp2ihm.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tp2ihm.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

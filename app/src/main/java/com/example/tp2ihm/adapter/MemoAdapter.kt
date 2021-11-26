@@ -1,8 +1,7 @@
-package adapter
+package com.example.tp2ihm.adapter
 
-import activity.DetailMemoActivityMain
-import activity.FragmentActivity
-import activity.RecyclerViewActivity
+import com.example.tp2ihm.activity.DetailMemoActivityMain
+import com.example.tp2ihm.activity.FragmentActivity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,14 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
-import android.widget.Toast
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView
-import bo.Memo
+import com.example.tp2ihm.bo.Memo
 import com.example.tp2ihm.R
-import fragment.DetailMemoFragment
+import com.example.tp2ihm.fragment.DetailMemoFragment
 
-class MemoAdapter2 (private var listeMemo: MutableList<Memo>, private val recyclerViewActivity: RecyclerViewActivity) :
-    RecyclerView.Adapter<MemoAdapter2.MemoViewHolder>()
+class MemoAdapter (private var listeMemo: MutableList<Memo>, private val fragmentActivity: FragmentActivity) :
+    RecyclerView.Adapter<MemoAdapter.MemoViewHolder>()
 {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder {
@@ -50,8 +49,13 @@ class MemoAdapter2 (private var listeMemo: MutableList<Memo>, private val recycl
             itemView.setOnClickListener{
                 val memo = listeMemo[adapterPosition]
 
+                val preferences = PreferenceManager.getDefaultSharedPreferences(itemView.context)
+                val editor = preferences.edit()
+                editor.putString("memoSave", memo.title)
+                editor.apply()
+
                 //choix affichage tablette /smartphone
-                if (recyclerViewActivity.findViewById<FrameLayout>(R.id.conteneur_fragment) != null)
+                if (fragmentActivity.findViewById<FrameLayout>(R.id.conteneur_fragment) != null)
                 {
                     //tablette:
                     val fragment = DetailMemoFragment()
@@ -62,7 +66,7 @@ class MemoAdapter2 (private var listeMemo: MutableList<Memo>, private val recycl
                     fragment.arguments = bundle
 
                     //ajout
-                    val transaction = recyclerViewActivity.supportFragmentManager.beginTransaction()
+                    val transaction = fragmentActivity.supportFragmentManager.beginTransaction()
                     transaction.replace(R.id.conteneur_fragment,fragment, "tagfacultatif")
                     transaction.commit()
                 } else {

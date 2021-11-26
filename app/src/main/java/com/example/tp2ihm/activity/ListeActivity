@@ -1,11 +1,11 @@
-package activity
+package com.example.tp2ihm.activity
 
-import adapter.MemoAdapter
+import com.example.tp2ihm.adapter.MemoAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import bo.Memo
+import com.example.tp2ihm.bo.Memo
 import com.example.tp2ihm.R
 import kotlin.random.Random
 
@@ -32,9 +32,9 @@ class ListeItem : AppCompatActivity() {
             listeMemo.add(Memo("Rappel Urgent $a", "rappel rappel rappel rappel $a", Random.nextInt(4)+1))
         }
 
-        // adapter :
+        // com.example.tp2ihm.adapter :
         val memoAdapter = MemoAdapter(listeMemo)
-        recyclerView.adapter = memoAdapter
+        recyclerView.com.example.tp2ihm.adapter = memoAdapter
 
     }
 

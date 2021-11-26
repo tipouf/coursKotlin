@@ -13,25 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TP2IHM">
         <activity
-            android:name="activity.PreferencesActivity"
+            android:name=".activity.RoomMemoActivity"
             android:exported="false" />
         <activity
-            android:name="activity.DetailMemoActivityMain"
+            android:name=".activity.PreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DetailMemoActivityMain"
             android:exported="true" />
         <activity
-            android:name="activity.FragmentActivity"
+            android:name=".activity.FragmentActivity"
             android:exported="true" />
         <activity
-            android:name="activity.RecyclerViewActivity"
+            android:name=".activity.RecyclerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true" />
         <activity
-            android:name="activity.Cycledevie"
+            android:name=".activity.Cycledevie"
             android:exported="true" />
         <activity
-            android:name="activity.IntentActivity"
+            android:name=".activity.IntentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package activity
+package com.example.tp2ihm.activity
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -11,10 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
-import com.example.tp2ihm.MainActivity
 import com.example.tp2ihm.R
-import kotlin.math.log
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -26,6 +23,8 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var boutonFragment: Button
     private lateinit var boutonPreference: Button
     private lateinit var boutonDispositon: Button
+    private lateinit var boutonRoom: Button
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -56,6 +55,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         boutonDispositon = findViewById<Button>(R.id.button_disposition)
         boutonDispositon.setOnClickListener(this )
+
+        boutonRoom = findViewById<Button>(R.id.buttonRoom)
+        boutonRoom.setOnClickListener(this )
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -112,6 +114,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }else if (view == boutonDispositon) {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        } else if (view == boutonRoom) {
+            val intent = Intent(this, RoomMemoActivity::class.java)
             startActivity(intent)
         }
     }

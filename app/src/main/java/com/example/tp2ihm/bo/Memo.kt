@@ -1,4 +1,4 @@
-package bo
+package com.example.tp2ihm.bo
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -15,7 +15,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingHorizontal="100dp"
-        tools:context="activity.IntentActivity">
+        tools:context="com.example.tp2ihm.activity.IntentActivity">
 
     <TextClock
         android:layout_width="match_parent"
@@ -103,5 +103,14 @@
         android:width="200dp"
         android:height="70dp"
 />
+        <Button
+            android:id="@+id/buttonRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room"
+            android:fontFamily="@font/lemon"
+            android:width="200dp"
+            android:height="70dp"
+            />
     </LinearLayout>
 </ScrollView>

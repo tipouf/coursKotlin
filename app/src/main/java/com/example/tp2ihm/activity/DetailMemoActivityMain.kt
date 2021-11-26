@@ -1,10 +1,11 @@
-package activity
+package com.example.tp2ihm.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import bo.Memo
+import com.example.tp2ihm.bo.Memo
 import com.example.tp2ihm.R
-import fragment.DetailMemoFragment
+import com.example.tp2ihm.fragment.DetailMemoFragment
+import com.example.tp2ihm.metier.dto.MemoDTO
 
 class DetailMemoActivityMain : AppCompatActivity() {
 
@@ -17,15 +18,15 @@ class DetailMemoActivityMain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_memo_main)
 
-        //fragment
+        //com.example.tp2ihm.fragment
         val fragment = DetailMemoFragment()
 
         //argument MEMO
-        val memo: Memo? = intent.getParcelableExtra<Memo>(MEMO)
+        val memoDTO: MemoDTO? = intent.getParcelableExtra<MemoDTO>(MEMO)
 
         //argument :
         val bundle = Bundle()
-        bundle.putParcelable(DetailMemoFragment.MEMO, memo)
+        bundle.putParcelable(DetailMemoFragment.MEMO, memoDTO)
         fragment.arguments = bundle
 
         //ajout

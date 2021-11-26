@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context="activity.DetailMemoActivityMain"
+    tools:context="com.example.tp2ihm.activity.DetailMemoActivityMain"
     android:id="@+id/conteneur_fragment"
     >
 
     <!-- Methode static (quasiment jamais utilisé)
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment"
-        android:name="fragment.DetailMemoFragment"
+    <androidx.com.example.tp2ihm.fragment.app.FragmentContainerView
+        android:id="@+id/com.example.tp2ihm.fragment"
+        android:name="com.example.tp2ihm.fragment.DetailMemoFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
