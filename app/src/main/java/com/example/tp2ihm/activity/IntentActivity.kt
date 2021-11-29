@@ -24,40 +24,51 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var boutonPreference: Button
     private lateinit var boutonDispositon: Button
     private lateinit var boutonRoom: Button
+    private lateinit var boutonContentProvider: Button
+    private lateinit var boutonCoroutine: Button
+    private lateinit var boutonWebService: Button
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intent)
 
 
 
         bouton = findViewById<Button>(R.id.buttonIntent)
-        bouton.setOnClickListener(this )
+        bouton.setOnClickListener(this)
 
         boutonSend = findViewById<Button>(R.id.buttonSend)
-        boutonSend.setOnClickListener(this )
+        boutonSend.setOnClickListener(this)
 
         boutonSend2 = findViewById<Button>(R.id.buttonSend2)
-        boutonSend2.setOnClickListener(this )
+        boutonSend2.setOnClickListener(this)
 
         boutonPermission = findViewById<Button>(R.id.buttonPermission)
-        boutonPermission.setOnClickListener(this )
+        boutonPermission.setOnClickListener(this)
 
         boutonRecycler = findViewById<Button>(R.id.buttonRecycler)
-        boutonRecycler.setOnClickListener(this )
+        boutonRecycler.setOnClickListener(this)
 
         boutonFragment = findViewById<Button>(R.id.buttonFragment)
-        boutonFragment.setOnClickListener(this )
+        boutonFragment.setOnClickListener(this)
 
         boutonPreference = findViewById<Button>(R.id.buttonPreferences)
-        boutonPreference.setOnClickListener(this )
+        boutonPreference.setOnClickListener(this)
 
         boutonDispositon = findViewById<Button>(R.id.button_disposition)
-        boutonDispositon.setOnClickListener(this )
+        boutonDispositon.setOnClickListener(this)
 
         boutonRoom = findViewById<Button>(R.id.buttonRoom)
-        boutonRoom.setOnClickListener(this )
+        boutonRoom.setOnClickListener(this)
+
+        boutonContentProvider = findViewById<Button>(R.id.buttonContentProvider)
+        boutonContentProvider.setOnClickListener(this)
+
+        boutonCoroutine = findViewById<Button>(R.id.buttonCoroutine)
+        boutonCoroutine.setOnClickListener(this)
+
+        boutonWebService = findViewById<Button>(R.id.buttonWebservice)
+        boutonWebService.setOnClickListener(this)
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -112,16 +123,26 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
         } else if (view == boutonPreference) {
             val intent = Intent(this, PreferencesActivity::class.java)
             startActivity(intent)
-        }else if (view == boutonDispositon) {
+        } else if (view == boutonDispositon) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else if (view == boutonRoom) {
             val intent = Intent(this, RoomMemoActivity::class.java)
             startActivity(intent)
+        } else if (view == boutonContentProvider) {
+            val intent = Intent(this, ContentProviderActivity::class.java)
+            startActivity(intent)
+        } else if (view == boutonCoroutine) {
+            val intent = Intent(this, CoroutineActivity::class.java)
+            startActivity(intent)
+        } else if (view == boutonWebService) {
+            val intent = Intent(this, WebServiceActivity::class.java)
+            startActivity(intent)
         }
     }
-    private fun lireContact() {
-        Toast.makeText(this,"contacts", Toast.LENGTH_LONG).show()
+        private fun lireContact() {
+            Toast.makeText(this, "contacts", Toast.LENGTH_LONG).show()
+        }
     }
-}
+
 

@@ -103,11 +103,41 @@
         android:width="200dp"
         android:height="70dp"
 />
+    <Button
+        android:id="@+id/buttonRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Room"
+        android:fontFamily="@font/lemon"
+        android:width="200dp"
+        android:height="70dp"
+        />
+
+    <Button
+        android:id="@+id/buttonContentProvider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Content Provider"
+        android:fontFamily="@font/lemon"
+        android:width="200dp"
+        android:height="70dp"
+        />
+
         <Button
-            android:id="@+id/buttonRoom"
+            android:id="@+id/buttonCoroutine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Room"
+            android:text="Coroutine"
+            android:fontFamily="@font/lemon"
+            android:width="200dp"
+            android:height="70dp"
+            />
+
+        <Button
+            android:id="@+id/buttonWebservice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Web Service"
             android:fontFamily="@font/lemon"
             android:width="200dp"
             android:height="70dp"
