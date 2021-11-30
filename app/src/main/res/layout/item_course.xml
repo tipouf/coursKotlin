@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="course"
+            type="com.example.tp2ihm.metier.dto.CourseDTO" />
+        <variable
+            name="viewModel"
+            type="com.example.tp2ihm.viewModels.ListeCourseViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FF0000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.clicCourse(context, course)}"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/intitule_course"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/achete_course"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{course.intitule}"
+            tools:text="Course" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/achete_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:paddingRight="20dp"
+            android:checked="@{course.achete}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
