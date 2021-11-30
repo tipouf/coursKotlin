@@ -142,5 +142,15 @@
             android:width="200dp"
             android:height="70dp"
             />
+
+        <Button
+            android:id="@+id/buttonDataBinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DataBinding"
+            android:fontFamily="@font/lemon"
+            android:width="200dp"
+            android:height="70dp"
+            />
     </LinearLayout>
 </ScrollView>

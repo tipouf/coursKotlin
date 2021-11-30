@@ -21,7 +21,7 @@ interface WSInterface
 
 
     //Don't works!!!!!!!!!!!!!!!!!!
-    @GET("api/planets/")
+    @GET("api/planets/{id}")
     suspend fun getOnePlanet(
-        @Query("param1") query: Int?) : Planet
+        @Path("id") id: Int?) : Planet
 }
