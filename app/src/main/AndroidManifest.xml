@@ -15,6 +15,9 @@
         android:theme="@style/Theme.TP2IHM"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.ListAdapterActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ViewModelLiveData"
             android:exported="true" />
         <activity

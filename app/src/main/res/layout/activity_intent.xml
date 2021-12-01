@@ -161,5 +161,14 @@
             android:fontFamily="@font/lemon"
             android:width="200dp"
             android:height="70dp"/>
+
+        <Button
+            android:id="@+id/buttonlistAdapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ListAdapter"
+            android:fontFamily="@font/lemon"
+            android:width="200dp"
+            android:height="70dp"/>
     </LinearLayout>
 </ScrollView>

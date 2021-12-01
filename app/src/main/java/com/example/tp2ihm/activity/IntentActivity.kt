@@ -29,6 +29,7 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var boutonWebService: Button
     private lateinit var boutonDataBinding: Button
     private lateinit var  boutonViewModel: Button
+    private lateinit var  boutonListAdapter: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +78,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         boutonViewModel = findViewById<Button>(R.id.buttonViewModel)
         boutonViewModel.setOnClickListener(this)
+
+        boutonListAdapter = findViewById<Button>(R.id.buttonlistAdapter)
+        boutonListAdapter.setOnClickListener(this)
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -146,11 +150,14 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
         } else if (view == boutonWebService) {
             val intent = Intent(this, WebServiceActivity::class.java)
             startActivity(intent)
-        }else if (view == boutonDataBinding) {
+        } else if (view == boutonDataBinding) {
             val intent = Intent(this, DataBindingActivity::class.java)
             startActivity(intent)
-        }else if (view == boutonViewModel) {
+        } else if (view == boutonViewModel) {
             val intent = Intent(this, ViewModelLiveData::class.java)
+            startActivity(intent)
+        } else if (view == boutonListAdapter) {
+            val intent = Intent(this, ListAdapterActivity::class.java)
             startActivity(intent)
         }
     }

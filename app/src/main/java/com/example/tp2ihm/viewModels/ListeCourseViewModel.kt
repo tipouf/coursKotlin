@@ -27,10 +27,26 @@ class ListeCourseViewModel : ViewModel()
 
     fun ajoutCourse(saisie: String, context: Context)
     {
-        val courseDTO = CourseDTO(0,saisie,Random.nextBoolean(),"Divers", 02F)
+        val courseDTO = CourseDTO(0,saisie, false,"Divers", 02F)
 
         AppDatabaseHelperCourse.getDatabase(context).coursesDAO().insert(courseDTO)
 
+        chargerCourses(context)
+    }
+
+    fun removeCourse( context: Context, courseDTO: CourseDTO)
+    {
+        AppDatabaseHelperCourse.getDatabase(context).coursesDAO().delete(courseDTO)
+        chargerCourses(context)
+    }
+
+    fun updateCourse( context: Context, courseDTO: CourseDTO)
+    {
+//        val course = CourseDTO(courseDTO.courseId,courseDTO.intitule, !courseDTO.achete, courseDTO.categorie, courseDTO.prix)
+
+        courseDTO.achete = !courseDTO.achete
+
+        AppDatabaseHelperCourse.getDatabase(context).coursesDAO().update(courseDTO)
         chargerCourses(context)
     }
 }

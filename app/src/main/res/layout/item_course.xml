@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
+
     <data>
         <variable
             name="course"
@@ -21,7 +22,7 @@
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#FF0000">
+        app:cardBackgroundColor="@{course.achete ? @color/green : @color/red}">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,30 +30,58 @@
         android:onClick="@{() -> viewModel.clicCourse(context, course)}"
         android:padding="16dp">
 
+    <TextView
+        android:id="@+id/intitule_course"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/prix_course"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@{course.intitule}"
+        tools:text="Course" />
+
         <TextView
-            android:id="@+id/intitule_course"
+            android:id="@+id/prix_course"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/achete_course"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@{course.intitule}"
-            tools:text="Course" />
+            android:paddingRight="40dp"
+            android:text="@{String.valueOf(course.prix)}"
+            tools:text="Prix" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/achete_course"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleX="2"
-            android:scaleY="2"
-            android:paddingRight="20dp"
-            android:checked="@{course.achete}"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/achete_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:paddingRight="20dp"
+        android:checked="@{course.achete}"
+        android:onClick="@{() -> viewModel.updateCourse(context, course)}"
+        app:layout_constraintRight_toLeftOf="@id/remove_course"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/remove_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:onClick="@{() -> viewModel.removeCourse(context, course)}"
+        android:src="@android:drawable/ic_menu_delete"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
