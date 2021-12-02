@@ -170,5 +170,14 @@
             android:fontFamily="@font/lemon"
             android:width="200dp"
             android:height="70dp"/>
+
+        <Button
+            android:id="@+id/button_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service"
+            android:fontFamily="@font/lemon"
+            android:width="200dp"
+            android:height="70dp"/>
     </LinearLayout>
 </ScrollView>

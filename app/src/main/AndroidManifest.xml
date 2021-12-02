@@ -15,6 +15,18 @@
         android:theme="@style/Theme.TP2IHM"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.ServicePage2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ServiceActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".service.MonService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
             android:name=".activity.ListAdapterActivity"
             android:exported="false" />
         <activity
